@@ -7,3 +7,6 @@ services:
     ports:
       - "80:80"
     restart: unless-stopped
+# Command for running
+# The -f flag stands for file - it lets you specify which compose file to use.
+# docker compose -f docker-compose.prod.yml up -d --build

@@ -1,5 +1,45 @@
 @import "tailwindcss";
 
+/* 
+Namespace	Utility classes
+--color-*	Color utilities like bg-red-500, text-sky-300, and many more
+--font-*	Font family utilities like font-sans
+--text-*	Font size utilities like text-xl
+--font-weight-*	Font weight utilities like font-bold
+--tracking-*	Letter spacing utilities like tracking-wide
+--leading-*	Line height utilities like leading-tight
+--breakpoint-*	Responsive breakpoint variants like sm:*
+--container-*	Container query variants like @sm:* and size utilities like max-w-md
+--spacing-*	Spacing and sizing utilities like px-4, max-h-16, and many more
+--radius-*	Border radius utilities like rounded-sm
+--shadow-*	Box shadow utilities like shadow-md
+--inset-shadow-*	Inset box shadow utilities like inset-shadow-xs
+--drop-shadow-*	Drop shadow filter utilities like drop-shadow-md
+--blur-*	Blur filter utilities like blur-md
+--perspective-*	Perspective utilities like perspective-near
+--aspect-*	Aspect ratio utilities like aspect-video
+--ease-*	Transition timing function utilities like ease-out
+--animate-*	Animation utilities like animate-spin
+*/
+
+/* Background	Off-White	#F8F9FA	The main page background. Soft on eyes.
+Card/Container	Pure White	#FFFFFF	The box where the experiment happens.
+Text (Primary)	Charcoal	#212529	Questions, instructions.
+Text (Secondary)	Slate Gray	#6C757D	Helper text, "Press Enter to continue".
+Primary Action	Scientific Blue	#0055A5	"Start", "Next", "Submit" buttons.
+Error	Muted Red	#DC3545	Validation errors (e.g. "Field required").
+Success	Soft Green	#28A745	"Data Saved" message. */
+
+@theme {
+  --color-Background: #f8f9fa;
+  --color-CardContainer: #ffffff;
+  --colo-Primary: #212529;
+  --colo-Secondary: #6c757d;
+  --colo-Primary-Action: #0055a5;
+  --font-inter: "Inter" sans-serif;
+  --font-Robot: "Roboto" sans-serif;
+  --font-Arial: "Arial" sans-serif;
+}
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
