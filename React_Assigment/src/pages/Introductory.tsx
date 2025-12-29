@@ -1,4 +1,5 @@
-import HomePageButton from "../components/Buttons/HomePageButton";
+import { Link } from "react-router";
+import HomePageButton from "../components/Buttons/Homepage/HomePageButton";
 import AboutCard from "../components/Cards/IntroductoryPage/AboutCard";
 import ExperimentStageCard from "../components/Cards/IntroductoryPage/ExperimentStageCard";
 import ImportantInformationCard from "../components/Cards/IntroductoryPage/ImportantInformationCard";
@@ -48,11 +49,13 @@ export default function Introductory() {
 
       {/* Start Button */}
       <div className="pb-12">
-        <HomePageButton
-          variant="primary"
-          icon="start.svg"
-          text="Begin Experiment"
-        />
+        <Link to={"/ex1"}>
+          <HomePageButton
+            variant="primary"
+            icon="start.svg"
+            text="Begin Experiment"
+          />
+        </Link>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import HomePageButton from "../components/Buttons/HomePageButton";
+import HomePageButton from "../components/Buttons/Homepage/HomePageButton";
 import Card from "../components/Cards/HomePage/Card";
 
 export default function HomePage() {

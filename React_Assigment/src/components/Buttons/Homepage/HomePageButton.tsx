@@ -13,7 +13,7 @@ export default function HomePageButton({
   text,
 }: ButtonProps) {
   const baseStyles =
-    "px-6 py-2 flex gap-2 border border-black rounded-[8px] mt-h2 items-center";
+    "px-6 py-2 flex gap-2 border border-black rounded-lg mt-h2 items-center";
 
   const variantStyles = {
     primary: "bg-primary-Action-500 text-Background-50",
