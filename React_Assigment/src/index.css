@@ -68,6 +68,9 @@ Success	Soft Green	#28A745	"Data Saved" message. */
   --color-primary-Action-700: #1c5285;
 
   /* Text */
+  --text-h1-xxxsm: 20px;
+  --text-h1-xxsm: 24px;
+  --text-h1-xsm: 28px;
   --text-h1-sm: 32px;
   --text-h1-md: 42px;
   --text-h1-lg: 48px;
@@ -82,6 +85,7 @@ Success	Soft Green	#28A745	"Data Saved" message. */
   --font-Arial: "Arial" sans-serif;
 
   /* Spacing */
+  --spacing-sm: 16px;
   --spacing-h2: 24px;
 
   /* breakpoint */

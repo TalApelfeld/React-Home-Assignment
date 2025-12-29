@@ -1,5 +1,6 @@
+import { Link } from "react-router";
 import HomePageButton from "../components/Buttons/HomePageButton";
-import Card from "../components/Card";
+import Card from "../components/Cards/HomePage/Card";
 
 export default function HomePage() {
   return (
@@ -19,11 +20,13 @@ export default function HomePage() {
         <button className="px-6 py-2 flex gap-2 bg-Background border border-black rounded-[8px] mt-h2 text-text-Primary">
           View Stats
         </button> */}
-        <HomePageButton
-          variant="primary"
-          icon="/experimentIcon.svg"
-          text="Start New Experiment"
-        />
+        <Link to={"/About"}>
+          <HomePageButton
+            variant="primary"
+            icon="/experimentIcon.svg"
+            text="Start New Experiment"
+          />
+        </Link>
         <HomePageButton
           variant="secondary"
           icon="/stats.svg"
