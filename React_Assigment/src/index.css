@@ -30,16 +30,66 @@ Primary Action	Scientific Blue	#0055A5	"Start", "Next", "Submit" buttons.
 Error	Muted Red	#DC3545	Validation errors (e.g. "Field required").
 Success	Soft Green	#28A745	"Data Saved" message. */
 
+/* 
+  --breakpoint-sm: 40rem;    640px 
+  --breakpoint-md: 48rem;     768px - customize this 
+  --breakpoint-lg: 64rem;     1024px - or this 
+  --breakpoint-xl: 80rem;     1280px 
+  --breakpoint-2xl: 96rem;    1536px 
+  */
+
+/* 
+  --breakpoint-tablet: 48rem;
+  --breakpoint-laptop: 64rem;
+  --breakpoint-desktop: 80rem;
+  */
+
 @theme {
-  --color-Background: #f8f9fa;
+  /* Borders & Dividers */
+  --color-neutral-200: #e9ecef; /* Light border */
+  --color-neutral-300: #dee2e6; /* Input field border */
+
+  /* Secondary Text / Icons */
+  --color-neutral-500: #adb5bd; /* Disabled text / Placeholder */
+  --color-neutral-600: #6c757d; /* YOUR Secondary Text */
+
+  /* Primary Text */
+  --color-neutral-800: #343a40; /* Softer Heading */
+  --color-neutral-900: #212529; /* YOUR Primary Text */
+
+  --color-Background-50: #f8f9fa;
   --color-CardContainer: #ffffff;
-  --colo-Primary: #212529;
-  --colo-Secondary: #6c757d;
-  --colo-Primary-Action: #0055a5;
+  --color-text-Primary: #212529;
+  --color-text-Secondary: #6c757d;
+  --color-primary-Action-100: #dbeafe;
+  --color-primary-Action-200: #bfdbfe;
+  --color-primary-Action-500: #2f88db;
+  --color-primary-Action-600: #256db0;
+  --color-primary-Action-700: #1c5285;
+
+  /* Text */
+  --text-h1-sm: 32px;
+  --text-h1-md: 42px;
+  --text-h1-lg: 48px;
+
+  --text-h2-sm: 12px;
+  --text-h2-md: 16px;
+  --text-h2-lg: 18px;
+
+  /* Font */
   --font-inter: "Inter" sans-serif;
   --font-Robot: "Roboto" sans-serif;
   --font-Arial: "Arial" sans-serif;
+
+  /* Spacing */
+  --spacing-h2: 24px;
+
+  /* breakpoint */
+  --breakpoint-tablet: 48rem;
+  --breakpoint-laptop: 64rem;
+  --breakpoint-desktop: 80rem;
 }
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
