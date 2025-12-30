@@ -16,6 +16,7 @@ export const RANDOM_WORDS = {
 // Local Storage Keys
 export const STORAGE_KEYS = {
   EXPERIMENTS: "technion_experiment_results",
+  CURRENT_EXPERIMENT: "technion_current_experiment",
 } as const;
 
 // Route Paths

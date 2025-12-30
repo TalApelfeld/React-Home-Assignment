@@ -7,6 +7,7 @@ import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
 import { useRandomWords } from "../hooks/useRandomWords";
 import { useExperiment } from "../hooks/useExperiment";
 import { useFirstClick } from "../hooks/useFirstClick";
+import { useBlockNavigation } from "../hooks/useBlockNavigation";
 import ReturnHomeButton from "../components/Buttons/ReturnHomeButton";
 
 export default function ExperimentPage1() {
@@ -20,6 +21,9 @@ export default function ExperimentPage1() {
     canProceedFromPage1,
   } = useExperiment();
   const isFormValid = canProceedFromPage1();
+
+  // Block navigation - only allow Continue (/ex2) or Return Home (/)
+  useBlockNavigation(["/ex2", "/"]);
 
   // Track first click on this page
   useFirstClick(recordPage1FirstClick);

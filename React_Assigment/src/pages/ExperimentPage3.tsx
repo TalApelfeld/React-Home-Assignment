@@ -4,10 +4,14 @@ import StatsCardExperiment1 from "../components/Cards/statsPage/StatsCardExperim
 import StatsCardExperiment2 from "../components/Cards/statsPage/StatsCardExperiment2";
 import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
 import { useExperiment } from "../hooks/useExperiment";
+import { useBlockNavigation } from "../hooks/useBlockNavigation";
 
 export default function ExperimentPage3() {
   const { data, completeAndSaveExperiment, resetExperiment } = useExperiment();
   const [saved, setSaved] = useState(false);
+
+  // Block navigation - only allow Return Home (/)
+  useBlockNavigation(["/"]);
 
   // Save experiment on mount (only once)
   useEffect(() => {

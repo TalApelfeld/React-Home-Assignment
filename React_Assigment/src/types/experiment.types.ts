@@ -1,19 +1,9 @@
-// ============================================
-// Experiment Data Types
-// ============================================
-
-/**
- * Represents a single button click event
- */
 export interface ButtonClick {
   value: string;
-  timestamp: string; // ISO 8601 UTC string
+  timestamp: string;
   type: "likert" | "word" | "submit";
 }
 
-/**
- * Data collected from Experiment Page 1
- */
 export interface Page1Data {
   firstClickTimestamp: string | null;
   clicks: ButtonClick[];
@@ -21,30 +11,21 @@ export interface Page1Data {
   selectedWord: string | null;
 }
 
-/**
- * Data collected from Experiment Page 2
- */
 export interface Page2Data {
   firstClickTimestamp: string | null;
-  bucketClicks: string[]; // Array of ISO 8601 UTC timestamps
+  bucketClicks: string[];
   fillDurationMs: number | null;
   submitTimestamp: string | null;
 }
 
-/**
- * Complete experiment session data
- */
 export interface ExperimentData {
-  id: string; // Unique identifier for this experiment run
-  startedAt: string; // When the experiment began
-  completedAt: string | null; // When the experiment was completed
+  id: string;
+  startedAt: string;
+  completedAt: string | null;
   page1: Page1Data;
   page2: Page2Data;
 }
 
-/**
- * A completed experiment saved to storage
- */
 export interface CompletedExperiment extends ExperimentData {
   completedAt: string; // Override to make non-null
 }

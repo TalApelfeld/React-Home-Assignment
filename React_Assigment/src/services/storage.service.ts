@@ -1,4 +1,7 @@
-import type { CompletedExperiment } from "../types/experiment.types";
+import type {
+  CompletedExperiment,
+  ExperimentState,
+} from "../types/experiment.types";
 import { STORAGE_KEYS } from "../utils/constants";
 
 /**
@@ -90,6 +93,61 @@ export const StorageService = {
       localStorage.removeItem(testKey);
       return true;
     } catch {
+      return false;
+    }
+  },
+
+  /**
+   * Saves the current experiment state to localStorage
+   * @param state - The current experiment state to persist
+   * @returns boolean indicating success
+   */
+  saveCurrentExperiment: (state: ExperimentState): boolean => {
+    try {
+      localStorage.setItem(
+        STORAGE_KEYS.CURRENT_EXPERIMENT,
+        JSON.stringify(state)
+      );
+      return true;
+    } catch (error) {
+      console.error("StorageService: Error saving current experiment", error);
+      return false;
+    }
+  },
+
+  /**
+   * Retrieves the current experiment state from localStorage
+   * @returns The current experiment state or null if none exists
+   */
+  getCurrentExperiment: (): ExperimentState | null => {
+    try {
+      const data = localStorage.getItem(STORAGE_KEYS.CURRENT_EXPERIMENT);
+      if (!data) return null;
+
+      const parsed = JSON.parse(data);
+      return parsed as ExperimentState;
+    } catch (error) {
+      console.error(
+        "StorageService: Error reading current experiment",
+        error
+      );
+      return null;
+    }
+  },
+
+  /**
+   * Clears the current experiment state from localStorage
+   * @returns boolean indicating success
+   */
+  clearCurrentExperiment: (): boolean => {
+    try {
+      localStorage.removeItem(STORAGE_KEYS.CURRENT_EXPERIMENT);
+      return true;
+    } catch (error) {
+      console.error(
+        "StorageService: Error clearing current experiment",
+        error
+      );
       return false;
     }
   },

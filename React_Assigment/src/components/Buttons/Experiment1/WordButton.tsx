@@ -20,7 +20,7 @@ export default function WordButton({
   return (
     <button
       className={`px-4 py-2 min-w-25 border-2 border-neutral-300 rounded-lg 
-        hover:bg-neutral-200 active:bg-neutral-300 ${ButtonClick} ${
+        hover:bg-neutral-300 active:bg-neutral-300 ${ButtonClick} ${
         isSelected ? "bg-neutral-300 " : ""
       }`}
       onClick={handleClick}

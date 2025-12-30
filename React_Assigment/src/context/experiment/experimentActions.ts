@@ -34,6 +34,7 @@ export function createExperimentActions(
 
     resetExperiment: () => {
       dispatch({ type: "RESET_EXPERIMENT" });
+      StorageService.clearCurrentExperiment();
     },
 
     // ----------------------------------------
@@ -110,7 +111,14 @@ export function createExperimentActions(
       };
 
       // Save to localStorage
-      return StorageService.saveExperiment(completedExperiment);
+      const success = StorageService.saveExperiment(completedExperiment);
+
+      // Clear current experiment state from localStorage
+      if (success) {
+        StorageService.clearCurrentExperiment();
+      }
+
+      return success;
     },
 
     // ----------------------------------------

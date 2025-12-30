@@ -3,6 +3,7 @@ import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
 import { ButtonClick } from "../styles/styles";
 import { useExperiment } from "../hooks/useExperiment";
 import { useFirstClick } from "../hooks/useFirstClick";
+import { useBlockNavigation } from "../hooks/useBlockNavigation";
 import { BUCKET_MAX_CLICKS } from "../utils/constants";
 import { useEffect } from "react";
 import ReturnHomeButton from "../components/Buttons/ReturnHomeButton";
@@ -30,6 +31,9 @@ export default function ExperimentPage2() {
   const counter = bucketClicks.length;
   const fillPercentage = (counter / BUCKET_MAX_CLICKS) * 100;
   const isBucketFull = counter >= BUCKET_MAX_CLICKS;
+
+  // Block navigation - only allow Continue (/stats) or Return Home (/)
+  useBlockNavigation(["/stats", "/"]);
 
   // Track first click on this page
   useFirstClick(recordPage2FirstClick);
