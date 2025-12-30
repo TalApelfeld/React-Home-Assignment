@@ -1,6 +1,6 @@
 import { useState } from "react";
-import HomePageButton from "../components/Reusable/PrimaryActionButton";
 import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
+import { Link } from "react-router";
 const MAX_CLICKS = 10;
 export default function ExperimentPage2() {
   const [counter, setCounter] = useState(0);
@@ -40,11 +40,13 @@ export default function ExperimentPage2() {
 
       {/* Continue button */}
       {counter === MAX_CLICKS ? (
-        <PrimaryActionButton
-          variant="primary"
-          text="Continue"
-          icon="/next.svg"
-        />
+        <Link to={"/stats"}>
+          <PrimaryActionButton
+            variant="primary"
+            text="Continue"
+            icon="/next.svg"
+          />
+        </Link>
       ) : (
         ""
       )}

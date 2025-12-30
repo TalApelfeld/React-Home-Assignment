@@ -24,7 +24,7 @@ export default function Introductory() {
 
       {/* Experiment Stages */}
       <div className=" text-start mb-h2">
-        <h1 className="text-h1-xsm">Experiment Stages</h1>
+        <h1 className="text-h1-xsm text-center">Experiment Stages</h1>
         <div className="flex flex-col lg:flex-row gap-4">
           <ExperimentStageCard
             icon="/click.svg"
