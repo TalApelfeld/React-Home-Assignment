@@ -20,10 +20,8 @@ export default function ButtonLikert({
   return (
     <button
       className={`w-14 h-14 border-2 border-neutral-300 rounded-full text-text-Primary
-         hover:bg-neutral-200 active:bg-neutral-300 ${ButtonClick} ${
-        isSelected
-          ? "bg-primary-Action-500 text-white border-primary-Action-500"
-          : ""
+         hover:bg-neutral-300  ${ButtonClick} ${
+        isSelected ? "bg-neutral-300" : ""
       }`}
       onClick={handleClick}
     >
