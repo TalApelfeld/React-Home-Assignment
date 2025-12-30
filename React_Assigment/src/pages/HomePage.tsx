@@ -1,11 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router";
-import HomePageButton from "../components/Reusable/PrimaryActionButton";
-import Card from "../components/Cards/HomePage/Card";
+import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
+import ExperimentCountCard from "../components/Cards/HomePage/Card";
+
+// import { useExperiment } from "../hooks/useExperiment";
+import PastExperimentsModal from "../components/Cards/HomePage/PastExperimentsModal";
 
 export default function HomePage() {
+  const [showPastExperiments, setShowPastExperiments] = useState(false);
+  // const { startExperiment } = useExperiment();
+
+  // const handleStartExperiment = () => {
+  //   startExperiment();
+  // };
+
   return (
     <>
-      {/* Welcom Titles */}
+      {/* Welcome Titles */}
       <h1 className="text-h1-sm md:text-h1-md lg:text-h1-lg">
         Experiment Data Collection System
       </h1>
@@ -13,24 +24,34 @@ export default function HomePage() {
         A multi-page experiment tracking user interactions and timing
       </h2>
 
-      {/* Number Of Experiments Conducted Card*/}
-      <Card />
+      {/* Number Of Experiments Conducted Card */}
+      <ExperimentCountCard />
 
       {/* Buttons */}
       <div className="flex flex-col items-center lg:flex-row lg:gap-4 mx-auto">
-        <Link to={"/About"}>
-          <HomePageButton
+        <Link
+          to="/About"
+          // onClick={handleStartExperiment}
+        >
+          <PrimaryActionButton
             variant="primary"
             icon="/experimentIcon.svg"
             text="Start New Experiment"
           />
         </Link>
-        <HomePageButton
-          variant="secondary"
-          icon="/stats.svg"
-          text="View Stats"
-        />
+        <div onClick={() => setShowPastExperiments(true)}>
+          <PrimaryActionButton
+            variant="secondary"
+            icon="/stats.svg"
+            text="View Stats"
+          />
+        </div>
       </div>
+
+      {/* Past Experiments Modal */}
+      {showPastExperiments && (
+        <PastExperimentsModal onClose={() => setShowPastExperiments(false)} />
+      )}
     </>
   );
 }

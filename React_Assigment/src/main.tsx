@@ -2,13 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import DefaultLayout from "./Layouts/DefaultLayout.tsx";
-import HomePage from "./pages/HomePage.tsx";
-import Introductory from "./pages/Introductory.tsx";
-import ExperimentPage1 from "./pages/ExperimentPage1.tsx";
-import ExperimentPage2 from "./pages/ExperimentPage2.tsx";
-import ExperimentPage3 from "./pages/ExperimentPage3.tsx";
-import NotFound404 from "./pages/NotFound404.tsx";
+import DefaultLayout from "./Layouts/DefaultLayout";
+import HomePage from "./pages/HomePage";
+import Introductory from "./pages/Introductory";
+import ExperimentPage1 from "./pages/ExperimentPage1";
+import ExperimentPage2 from "./pages/ExperimentPage2";
+import ExperimentPage3 from "./pages/ExperimentPage3";
+import NotFound404 from "./pages/NotFound404";
+import ExperimentProvider from "./context/experiment/ExperimentProvider";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ExperimentProvider>
+      <RouterProvider router={router} />
+    </ExperimentProvider>
   </StrictMode>
 );

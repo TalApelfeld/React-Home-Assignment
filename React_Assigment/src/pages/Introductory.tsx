@@ -1,10 +1,17 @@
 import { Link } from "react-router";
-import HomePageButton from "../components/Reusable/PrimaryActionButton";
+import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
 import AboutCard from "../components/Cards/IntroductoryPage/AboutCard";
 import ExperimentStageCard from "../components/Cards/IntroductoryPage/ExperimentStageCard";
 import ImportantInformationCard from "../components/Cards/IntroductoryPage/ImportantInformationCard";
+import { useExperiment } from "../hooks/useExperiment";
 
 export default function Introductory() {
+  const { startExperiment } = useExperiment();
+
+  const handleBeginExperiment = () => {
+    startExperiment();
+  };
+
   return (
     <>
       {/* Welcome Titles */}
@@ -23,7 +30,7 @@ export default function Introductory() {
       <AboutCard />
 
       {/* Experiment Stages */}
-      <div className=" text-start mb-h2">
+      <div className="text-start mb-h2">
         <h1 className="text-h1-xsm text-center">Experiment Stages</h1>
         <div className="flex flex-col lg:flex-row gap-4">
           <ExperimentStageCard
@@ -44,13 +51,13 @@ export default function Introductory() {
         </div>
       </div>
 
-      {/* Inforamtion Card */}
+      {/* Information Card */}
       <ImportantInformationCard />
 
       {/* Start Button */}
       <div className="pb-12">
-        <Link to={"/ex1"}>
-          <HomePageButton
+        <Link to="/ex1" onClick={handleBeginExperiment}>
+          <PrimaryActionButton
             variant="primary"
             icon="start.svg"
             text="Begin Experiment"

@@ -1,26 +1,31 @@
-import type { Dispatch, SetStateAction } from "react";
 import { ButtonClick } from "../../../styles/styles";
 
 interface IWordButtonProps {
   text: string;
   selectedWord: string;
-  setSelectedWord: Dispatch<SetStateAction<string>>;
+  onSelect: (word: string) => void;
 }
 
 export default function WordButton({
   text,
   selectedWord,
-  setSelectedWord,
+  onSelect,
 }: IWordButtonProps) {
-  function handleSelectedWord() {
-    setSelectedWord(text);
+  function handleClick() {
+    onSelect(text);
   }
+
+  const isSelected = selectedWord === text;
+
   return (
     <button
-      className={`w-32 h-10  border-2 border-neutral-300 rounded-lg ${ButtonClick} ${
-        selectedWord === text ? "bg-neutral-300" : ""
+      className={`px-4 py-2 min-w-[100px] border-2 border-neutral-300 rounded-lg 
+        hover:bg-neutral-200 active:bg-neutral-300 ${ButtonClick} ${
+        isSelected
+          ? "bg-primary-Action-500 text-white border-primary-Action-500"
+          : ""
       }`}
-      onClick={handleSelectedWord}
+      onClick={handleClick}
     >
       {text}
     </button>
