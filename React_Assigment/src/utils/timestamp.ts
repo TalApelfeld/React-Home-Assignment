@@ -22,23 +22,6 @@ export const calculateDurationMs = (
 };
 
 /**
- * Formats an ISO timestamp for display
- * @param timestamp - ISO timestamp
- * @returns Formatted string (e.g., "Dec 30, 2025, 10:30:00 AM")
- */
-export const formatTimestamp = (timestamp: string): string => {
-  return new Date(timestamp).toLocaleString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
-  });
-};
-
-/**
  * Formats an ISO timestamp showing only the time portion
  * @param timestamp - ISO timestamp
  * @returns Time string (e.g., "10:30:00.123")

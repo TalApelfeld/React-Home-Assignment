@@ -8,11 +8,6 @@ import PastExperimentsModal from "../components/Cards/HomePage/PastExperimentsMo
 
 export default function HomePage() {
   const [showPastExperiments, setShowPastExperiments] = useState(false);
-  // const { startExperiment } = useExperiment();
-
-  // const handleStartExperiment = () => {
-  //   startExperiment();
-  // };
 
   return (
     <>

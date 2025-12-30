@@ -7,7 +7,6 @@ export function useRandomWords(count: number = 3) {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    // TODO: dispaly an error Toast If THERE is no Internet
     const fetchWords = async () => {
       setLoading(true);
       setError(null);

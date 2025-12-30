@@ -5,10 +5,6 @@ import type {
 import { getUTCTimestamp } from "../../utils/timestamp";
 import { createInitialData, initialState } from "./experimentInitialState";
 
-/**
- * Pure reducer function for experiment state management
- * Handles all state transitions based on dispatched actions
- */
 export function experimentReducer(
   state: ExperimentState,
   action: ExperimentAction

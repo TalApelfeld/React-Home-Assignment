@@ -15,12 +15,9 @@ export function usePreventBackNavigation() {
     window.history.pushState(null, "", location.pathname);
 
     const handlePopState = (event: PopStateEvent) => {
+      console.log(event);
       // When user presses back button, push them forward again
       window.history.pushState(null, "", location.pathname);
-
-      // Optional: Show a message to the user
-      // You can uncomment this if you want to alert users
-      // alert("Please use the 'Return Home' button to exit the experiment.");
     };
 
     // Listen for back button events

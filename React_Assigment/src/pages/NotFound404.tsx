@@ -65,12 +65,6 @@ const NotFound404 = () => {
               type="text"
               placeholder="What are you looking for?"
               className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-indigo-500 transition-colors"
-              onKeyPress={(e) => {
-                if (e.key === "Enter") {
-                  // Handle search - implement your search logic here
-                  //   console.log("Search:", e.target.value);
-                }
-              }}
             />
             <button className="absolute right-2 top-1/2 -translate-y-1/2 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">
               Search

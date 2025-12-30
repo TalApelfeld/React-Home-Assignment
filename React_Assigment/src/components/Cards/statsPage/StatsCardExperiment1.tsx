@@ -1,5 +1,4 @@
 import type { Page1Data } from "../../../types/experiment.types";
-import { formatTimestamp } from "../../../utils/timestamp";
 
 interface StatsCardExperiment1Props {
   data: Page1Data;

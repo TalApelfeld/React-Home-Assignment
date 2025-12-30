@@ -7,7 +7,6 @@ import type {
 import { type ExperimentActions } from "./experimentActions";
 
 export interface ExperimentContextValue extends ExperimentActions {
-  // State (read-only)
   state: ExperimentState;
   stage: ExperimentStage;
   data: ExperimentData;

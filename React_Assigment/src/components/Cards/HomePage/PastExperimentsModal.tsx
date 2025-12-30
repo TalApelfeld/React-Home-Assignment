@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { StorageService } from "../../../services/storage.service";
-import { formatTimestamp, formatDuration } from "../../../utils/timestamp";
+import { formatDuration } from "../../../utils/timestamp";
 import type { CompletedExperiment } from "../../../types/experiment.types";
 import { ButtonClick } from "../../../styles/styles";
 
@@ -107,9 +107,7 @@ export default function PastExperimentsModal({
                 <p className="text-h2-sm text-text-Secondary">
                   First Click:{" "}
                   {selectedExperiment.page1.firstClickTimestamp
-                    ? formatTimestamp(
-                        selectedExperiment.page1.firstClickTimestamp
-                      )
+                    ? selectedExperiment.page1.firstClickTimestamp
                     : "N/A"}
                 </p>
                 <p className="text-h2-sm text-text-Secondary">
@@ -125,8 +123,7 @@ export default function PastExperimentsModal({
                     <ul className="text-h2-sm text-text-Secondary ml-4">
                       {selectedExperiment.page1.clicks.map((click, idx) => (
                         <li key={idx}>
-                          [{click.type}] {click.value} -{" "}
-                          {formatTimestamp(click.timestamp)}
+                          [{click.type}] {click.value} - {click.timestamp}
                         </li>
                       ))}
                     </ul>
@@ -142,9 +139,7 @@ export default function PastExperimentsModal({
                 <p className="text-h2-sm text-text-Secondary">
                   First Click:{" "}
                   {selectedExperiment.page2.firstClickTimestamp
-                    ? formatTimestamp(
-                        selectedExperiment.page2.firstClickTimestamp
-                      )
+                    ? selectedExperiment.page2.firstClickTimestamp
                     : "N/A"}
                 </p>
                 <p className="text-h2-sm text-text-Secondary">
@@ -156,7 +151,7 @@ export default function PastExperimentsModal({
                 <p className="text-h2-sm text-text-Secondary">
                   Submit Time:{" "}
                   {selectedExperiment.page2.submitTimestamp
-                    ? formatTimestamp(selectedExperiment.page2.submitTimestamp)
+                    ? selectedExperiment.page2.submitTimestamp
                     : "N/A"}
                 </p>
                 <p className="text-h2-sm text-text-Secondary">
@@ -192,9 +187,7 @@ export default function PastExperimentsModal({
                 {experiments.map((exp, idx) => (
                   <tr key={exp.id} className="hover:bg-neutral-50">
                     <td className="py-3 text-h2-sm">{idx + 1}</td>
-                    <td className="py-3 text-h2-sm">
-                      {formatTimestamp(exp.completedAt)}
-                    </td>
+                    <td className="py-3 text-h2-sm">{exp.completedAt}</td>
                     <td className="py-3 text-h2-sm">
                       {exp.page1.selectedLikertValue}
                     </td>
