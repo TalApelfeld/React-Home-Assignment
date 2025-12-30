@@ -10,15 +10,11 @@ export default function HomePage() {
       <h2 className="text-h2-lg text-text-Secondary mb-h2">
         A multi-page experiment tracking user interactions and timing
       </h2>
+
       {/* Number Of Experiments Conducted Card*/}
       <Card />
+
       <div className="flex flex-col items-center lg:flex-row lg:gap-4">
-        {/* <button className="px-6 py-2 flex gap-2 bg-primary-Action-500 text-Background border border-black rounded-lg mt-h2">
-          Start New Experiment
-        </button>
-        <button className="px-6 py-2 flex gap-2 bg-Background border border-black rounded-[8px] mt-h2 text-text-Primary">
-          View Stats
-        </button> */}
         <HomePageButton
           variant="primary"
           icon="/experimentIcon.svg"
