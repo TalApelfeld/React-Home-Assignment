@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-export default function HomePageButton({
+export default function PrimaryActionButton({
   variant = "primary",
   icon,
   text,
@@ -22,8 +22,8 @@ export default function HomePageButton({
 
   return (
     <button className={`${baseStyles} ${variantStyles[variant]}`}>
-      <img src={icon} alt="icon" className="w-6 h-6" />
       {text}
+      <img src={icon} alt="icon" className="w-6 h-6" />
     </button>
   );
 }

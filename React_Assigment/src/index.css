@@ -78,6 +78,7 @@ Success	Soft Green	#28A745	"Data Saved" message. */
   --text-h2-sm: 12px;
   --text-h2-md: 16px;
   --text-h2-lg: 18px;
+  --text-h2-xl: 24px;
 
   /* Font */
   --font-inter: "Inter" sans-serif;
