@@ -2,8 +2,8 @@ import { Outlet } from "react-router";
 
 export default function DefaultLayout() {
   return (
-    <div className="bg-Background-50 font-inter h-screen leading-normal flex flex-col items-center text-center ">
-      <div className="flex h-[8%] lg:h-[7%] w-full bg-text-Primary p-2 mb-h2">
+    <div className="bg-Background-50 font-inter h-screen leading-normal flex flex-col items-center text-center overflow-auto">
+      <div className="flex h-[8%] lg:h-[9%] w-full bg-text-Primary p-2 mb-h2">
         <img src="/TechnionLogo.svg" alt="logo" className="w-12 h-12" />
         <div className="flex flex-col justify-center lg:justify-start text-start  text-Background-50">
           <span className="text-h2-lg">Technion Research Study</span>

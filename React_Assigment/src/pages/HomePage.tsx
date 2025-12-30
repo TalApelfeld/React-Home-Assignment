@@ -1,9 +1,11 @@
-import HomePageButton from "../components/Buttons/HomePageButton";
-import Card from "../components/Card";
+import { Link } from "react-router";
+import HomePageButton from "../components/Reusable/PrimaryActionButton";
+import Card from "../components/Cards/HomePage/Card";
 
 export default function HomePage() {
   return (
     <>
+      {/* Welcom Titles */}
       <h1 className="text-h1-sm md:text-h1-md lg:text-h1-lg">
         Experiment Data Collection System
       </h1>
@@ -14,12 +16,15 @@ export default function HomePage() {
       {/* Number Of Experiments Conducted Card*/}
       <Card />
 
+      {/* Buttons */}
       <div className="flex flex-col items-center lg:flex-row lg:gap-4">
-        <HomePageButton
-          variant="primary"
-          icon="/experimentIcon.svg"
-          text="Start New Experiment"
-        />
+        <Link to={"/About"}>
+          <HomePageButton
+            variant="primary"
+            icon="/experimentIcon.svg"
+            text="Start New Experiment"
+          />
+        </Link>
         <HomePageButton
           variant="secondary"
           icon="/stats.svg"

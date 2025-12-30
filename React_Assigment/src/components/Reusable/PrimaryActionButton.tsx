@@ -7,13 +7,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-export default function HomePageButton({
+export default function PrimaryActionButton({
   variant = "primary",
   icon,
   text,
 }: ButtonProps) {
   const baseStyles =
-    "px-6 py-2 flex gap-2 border border-black rounded-[8px] mt-h2 items-center";
+    "px-6 py-2 flex gap-2 border border-black rounded-lg mt-h2 items-center";
 
   const variantStyles = {
     primary: "bg-primary-Action-500 text-Background-50",
@@ -22,8 +22,8 @@ export default function HomePageButton({
 
   return (
     <button className={`${baseStyles} ${variantStyles[variant]}`}>
-      <img src={icon} alt="icon" className="w-6 h-6" />
       {text}
+      <img src={icon} alt="icon" className="w-6 h-6" />
     </button>
   );
 }
