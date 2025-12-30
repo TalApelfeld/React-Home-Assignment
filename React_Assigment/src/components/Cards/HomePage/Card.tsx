@@ -1,4 +1,15 @@
-export default function Card() {
+import { useState, useEffect } from "react";
+import { StorageService } from "../../../services/storage.service";
+
+export default function ExperimentCountCard() {
+  const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {
+    // Load experiment count from localStorage
+    const experimentCount = StorageService.getExperimentCount();
+    setCount(experimentCount);
+  }, []);
+
   return (
     <div
       className="relative p-4 bg-CardContainer w-75 h-50 shadow-xl border-2 border-gray-200 rounded-2xl
@@ -24,8 +35,8 @@ export default function Card() {
       </div>
 
       {/* Number Of Conducted Experiments */}
-      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-text-Primary text-h1-sm ">
-        7
+      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-text-Primary text-h1-sm">
+        {count}
       </span>
     </div>
   );
