@@ -7,6 +7,7 @@ import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
 import { useRandomWords } from "../hooks/useRandomWords";
 import { useExperiment } from "../hooks/useExperiment";
 import { useFirstClick } from "../hooks/useFirstClick";
+import ReturnHomeButton from "../components/Buttons/ReturnHomeButton";
 
 export default function ExperimentPage1() {
   const navigate = useNavigate();
@@ -65,15 +66,19 @@ export default function ExperimentPage1() {
       )}
 
       {/* Next Button */}
-      <div className="pb-12">
+      <div className="flex gap-4 pb-12">
         {isFormValid ? (
-          <Link to="/ex2" onClick={handleContinue}>
-            <PrimaryActionButton
-              variant="primary"
-              text="Continue"
-              icon="/next.svg"
-            />
-          </Link>
+          <>
+            <ReturnHomeButton />
+
+            <Link to="/ex2" onClick={handleContinue}>
+              <PrimaryActionButton
+                variant="primary"
+                text="Continue"
+                icon="/next.svg"
+              />
+            </Link>
+          </>
         ) : (
           <div className="opacity-50 cursor-not-allowed">
             <PrimaryActionButton

@@ -18,9 +18,7 @@ export default function StatsCardExperiment1({
       <div className="w-full lg:w-[60%] mb-h2 border-2 border-neutral-300 rounded-lg p-4">
         <h2 className="text-text-Secondary text-h2-md">First Click</h2>
         <span className="text-h2-sm font-mono">
-          {data.firstClickTimestamp
-            ? formatTimestamp(data.firstClickTimestamp)
-            : "N/A"}
+          {data.firstClickTimestamp ? data.firstClickTimestamp : "N/A"}
         </span>
       </div>
 
@@ -61,9 +59,7 @@ export default function StatsCardExperiment1({
                 <tr key={idx}>
                   <td className="py-3 capitalize">{click.type}</td>
                   <td className="py-3 font-medium">{click.value}</td>
-                  <td className="py-3 font-mono text-xs">
-                    {formatTimestamp(click.timestamp)}
-                  </td>
+                  <td className="py-3 font-mono text-xs">{click.timestamp}</td>
                 </tr>
               ))
             ) : (

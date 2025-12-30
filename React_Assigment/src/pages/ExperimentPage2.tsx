@@ -5,6 +5,7 @@ import { useExperiment } from "../hooks/useExperiment";
 import { useFirstClick } from "../hooks/useFirstClick";
 import { BUCKET_MAX_CLICKS } from "../utils/constants";
 import { useEffect } from "react";
+import ReturnHomeButton from "../components/Buttons/ReturnHomeButton";
 
 export default function ExperimentPage2() {
   const {
@@ -64,9 +65,7 @@ export default function ExperimentPage2() {
           {/* drop & counter */}
           <div className="z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
             <img src="/drop.svg" alt="drop icon" className="w-12 h-12" />
-            <span className="text-h1-sm font-bold">
-              {counter}/{BUCKET_MAX_CLICKS}
-            </span>
+            <span className="text-h1-sm font-bold">{counter}</span>
           </div>
 
           {/* Fill div */}
@@ -75,25 +74,20 @@ export default function ExperimentPage2() {
             style={{ height: `${fillPercentage}%` }}
           />
         </div>
-
-        {/* Progress indicator */}
-        <div className="mt-4 w-[80%] bg-neutral-200 rounded-full h-2">
-          <div
-            className="bg-primary-Action-500 h-2 rounded-full transition-all duration-300"
-            style={{ width: `${fillPercentage}%` }}
-          />
-        </div>
       </div>
 
       {/* Continue button */}
       {isBucketFull && (
-        <Link to="/stats" onClick={handleSubmit}>
-          <PrimaryActionButton
-            variant="primary"
-            text="Continue"
-            icon="/next.svg"
-          />
-        </Link>
+        <div className=" flex gap-4">
+          <ReturnHomeButton />
+          <Link to="/stats" onClick={handleSubmit}>
+            <PrimaryActionButton
+              variant="primary"
+              text="Continue"
+              icon="/next.svg"
+            />
+          </Link>
+        </div>
       )}
 
       {/* Hint when not full */}

@@ -1,7 +1,3 @@
-// ============================================
-// Storage Service - localStorage Abstraction
-// ============================================
-
 import type { CompletedExperiment } from "../types/experiment.types";
 import { STORAGE_KEYS } from "../utils/constants";
 

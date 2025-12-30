@@ -20,9 +20,7 @@ export default function StatsCardExperiment2({
         <div className="border-2 border-neutral-300 rounded-lg p-4">
           <h2 className="text-text-Secondary text-h2-md">First Click</h2>
           <span className="text-h2-sm font-mono">
-            {data.firstClickTimestamp
-              ? formatTimestamp(data.firstClickTimestamp)
-              : "N/A"}
+            {data.firstClickTimestamp ? data.firstClickTimestamp : "N/A"}
           </span>
         </div>
 
@@ -30,9 +28,7 @@ export default function StatsCardExperiment2({
         <div className="border-2 border-neutral-300 rounded-lg p-4">
           <h2 className="text-text-Secondary text-h2-md">Fill Duration</h2>
           <span className="text-h1-xxsm font-bold">
-            {data.fillDurationMs !== null
-              ? formatDuration(data.fillDurationMs)
-              : "N/A"}
+            {data.fillDurationMs !== null ? data.fillDurationMs : "N/A"}
           </span>
         </div>
 
@@ -40,9 +36,7 @@ export default function StatsCardExperiment2({
         <div className="border-2 border-neutral-300 rounded-lg p-4">
           <h2 className="text-text-Secondary text-h2-md">Submit Time</h2>
           <span className="text-h2-sm font-mono">
-            {data.submitTimestamp
-              ? formatTimestamp(data.submitTimestamp)
-              : "N/A"}
+            {data.submitTimestamp ? data.submitTimestamp : "N/A"}
           </span>
         </div>
       </div>
@@ -72,9 +66,7 @@ export default function StatsCardExperiment2({
                 return (
                   <tr key={idx}>
                     <td className="py-3 font-medium">{idx + 1}</td>
-                    <td className="py-3 font-mono text-xs">
-                      {formatTimestamp(timestamp)}
-                    </td>
+                    <td className="py-3 font-mono text-xs">{timestamp}</td>
                     <td className="py-3 font-mono text-xs">
                       {idx === 0 ? "0ms" : `+${timeSinceFirst}ms`}
                     </td>
