@@ -2,7 +2,7 @@ import FirstClickCard from "../../Reusable/FirstClickCard";
 
 export default function StatsCardExperiment1() {
   return (
-    <div className="w-[90%] text-start border-2 border-neutral-300 rounded-lg p-4 mb-h2">
+    <div className="w-[90%] lg:w-[60%] text-start border-2 border-neutral-300 rounded-lg p-4 mb-h2">
       <h2 className="text-text-Primary text-h2-lg mb-h2">
         Page 1 - User Response
       </h2>

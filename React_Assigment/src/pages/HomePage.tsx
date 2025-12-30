@@ -9,7 +9,7 @@ export default function HomePage() {
       <h1 className="text-h1-sm md:text-h1-md lg:text-h1-lg">
         Experiment Data Collection System
       </h1>
-      <h2 className="text-h2-lg text-text-Secondary mb-h2">
+      <h2 className="text-h2-lg text-text-Secondary mb-12">
         A multi-page experiment tracking user interactions and timing
       </h2>
 
@@ -17,7 +17,7 @@ export default function HomePage() {
       <Card />
 
       {/* Buttons */}
-      <div className="flex flex-col items-center lg:flex-row lg:gap-4">
+      <div className="flex flex-col items-center lg:flex-row lg:gap-4 mx-auto">
         <Link to={"/About"}>
           <HomePageButton
             variant="primary"

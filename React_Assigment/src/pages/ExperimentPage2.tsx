@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
 import { Link } from "react-router";
+import { ButtonClick } from "../styles/styles";
 const MAX_CLICKS = 10;
 export default function ExperimentPage2() {
   const [counter, setCounter] = useState(0);
@@ -16,12 +17,15 @@ export default function ExperimentPage2() {
     <>
       <span className="mb-h2">Experiment - Page 2 of 3</span>
 
-      <div className=" w-[90%] flex flex-col items-center bg-neutral-100 rounded-lg p-4 border-2 border-black">
-        <h2 className="text-h2-xl mb-h2">Fill the bucket</h2>
+      <div className=" w-[90%] lg:w-[50%] flex flex-col items-center bg-neutral-100 rounded-lg p-4 border-2 border-neutral-400">
+        <h2 className="text-h2-xl ">Fill the bucket</h2>
+        <h2 className="mb-h2 text-h2-md text-text-Secondary">
+          Click 10 times to continue
+        </h2>
 
         {/* Bucket container */}
         <div
-          className="relative w-[80%] h-75 bg-neutral-200 rounded-lg"
+          className={`relative w-[80%] h-75 bg-neutral-200 border-2 border-neutral-300 rounded-lg ${ButtonClick}`}
           onClick={handleBucketClick}
         >
           {/* drop & counter */}

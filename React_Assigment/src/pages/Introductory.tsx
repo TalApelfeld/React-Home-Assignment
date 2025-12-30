@@ -8,7 +8,7 @@ export default function Introductory() {
   return (
     <>
       {/* Welcome Titles */}
-      <div className="px-6">
+      <div className="px-6 lg:px-96">
         <h1 className="text-h1-xsm lg:text-h1-md text-text-Primary">
           Welcome to Our Research Experiment
         </h1>

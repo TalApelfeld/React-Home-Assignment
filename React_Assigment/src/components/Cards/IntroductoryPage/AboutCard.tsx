@@ -10,7 +10,7 @@ export default function AboutCard() {
           times, interaction behaviors, and cognitive responses.
         </p>
         <p>
-          All data collected is anonymous and will be used solely for research
+          All data collected is anonymous and will be used for research
           purposes. The entire experiment takes approximately 3-5 minutes to
           complete.
         </p>

@@ -3,6 +3,7 @@ import LikertCard from "../components/Cards/Experiment1Page/LikertCard";
 import { useRandomWords } from "../hooks/useRandomWords";
 import RandomWordsCard from "../components/Cards/Experiment1Page/RandomWordsCard";
 import { Link } from "react-router";
+import PrimaryActionButton from "../components/Reusable/PrimaryActionButton";
 
 export default function ExperimentPage1() {
   const { words, loading, error } = useRandomWords();
@@ -14,7 +15,6 @@ export default function ExperimentPage1() {
       {/* Image */}
       <ImageContainer />
 
-      {/* TODO: make the buttons in Likert render with map function */}
       {/* Likert */}
       <LikertCard />
 
@@ -23,10 +23,13 @@ export default function ExperimentPage1() {
 
       {/* Next Button */}
       <Link to={"/ex2"}>
-        <button className="px-6 py-2 flex gap-2 border border-black rounded-lg mt-h2 items-center bg-primary-Action-500 text-Background-50">
-          Continue
-          <img src="/next.svg" alt="icon" className="w-6 h-6" />
-        </button>
+        <div className="pb-12">
+          <PrimaryActionButton
+            variant="primary"
+            text="Continue"
+            icon="/next.svg"
+          />
+        </div>
       </Link>
     </>
   );
